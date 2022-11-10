@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>Django Projects</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'post' %}">
+                <img src="{% static 'images/logo.png' %}" alt="happy face">
+            </a>
+        </div>
+        <div class="web-name">
+            <h3>Django Projects</h3>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a href="{% url 'post' %}">Home</a></li>
+                {{ user_profile.avatar.url }}
+                <li><img src="{{ user_profile.avatar.url }}" class="avatar"><a
+                        href="{% url 'profile' %}">{{request.user}}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+    <div class="footer"></div>
+</body>
+
+</html>

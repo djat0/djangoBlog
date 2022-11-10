@@ -1,0 +1,107 @@
+body {
+    background-color: rgba(75, 76, 88, 0.548);
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(52, 70, 104, 0.726);
+}
+
+.content {
+}
+
+.logo {
+    position: relative;
+    left: 0;
+    float: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.logo img {
+    align-content: center;
+    height: 50px;
+    width: 60px;   
+}
+
+.web-name {
+    position: relative;
+    float: left;
+    padding-top: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-weight: bolder;
+}
+
+.nav-items {
+    position: relative;
+    right: 0;
+    padding-top: 5px;
+}
+
+.nav-items a {
+    color: aquamarine;
+    text-decoration: none;
+}
+.nav-items a:hover {
+    color: rgb(131, 231, 64);
+  }
+
+.nav-items li {
+    display: inline;
+    padding-right: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    align-items: baseline;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.story-list {
+    position: absolute;
+    left: 0px;
+    width: 1200px;
+}
+
+.recommendation {
+    position: absolute;
+    right: 0px;
+    width: 600px;
+}   
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 70, 104);
+}
+
+.content {
+    margin-top: 65px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+}

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<hr>
+<h1>{{post.title}}</h1>
+<h4>{{post.headline}}</h4>
+<p>{{post.datetime_posted}}</p>
+<hr>
+
+{% for content in contents %}
+
+{% if content|first in '/' %}
+<img src="{{ content }}" class="center">
+{% else %}
+<p>{{ content }}</p>
+{% endif %}
+
+{% endfor %}
+
+<hr>
+<a href="{% url 'create-comment' post.id %}">add comment</a>
+{% for comment in comments %}
+
+
+{% if c.user == request.user %}
+<h4>{{ c.user }} |<a href="{% url 'edit-comment' comment.id %}">edit</a>||<a
+                href="{% url 'delete-comment' comment.id %}">delete</a>|
+</h4>
+{% else %}
+<h4>{{ comment.user }}</h4>
+{% endif %}
+<p>{{ comment.comment }}</p>
+<p><a href="{% url 'reply' comment.id %}">reply</a> || {{ c.datetime_posted }}</p>
+<hr>
+
+{% endfor %}
+
+{% endblock content %}

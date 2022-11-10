@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<hr>
+<h6>{{comment.user}}</h6>
+<h4>{{comment.comment}}</h4>
+<p>{{comment.datetime_posted}}</p>
+<hr
+
+<h4>Add reply here</h4>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	{{replyForm.as_p}}
+	<input type="submit" name="Submit">
+</form>
+
+
+
+	
+{% endblock content %}

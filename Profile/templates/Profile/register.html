@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+</head>
+
+<body>
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form1 %}
+        <p>{{ field.errors }}</p>
+        <p>{{ field.label_tag }} {{ field }}</p>
+        {% endfor %}
+        {{form2.as_p}}
+        <input type="submit" value="create user">
+    </form>
+    {{form.errors}}
+    <p>already have an account?<a href="{% url 'login' %}"> login</a></p>
+</body>
+
+</html>

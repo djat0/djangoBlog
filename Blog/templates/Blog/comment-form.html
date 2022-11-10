@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<hr>
+<h1>{{post.title}}</h1>
+<h4>{{post.headline}}</h4>
+<p>{{post.datetime_posted}}</p>
+<hr>
+
+<h4>Add comment here</h4>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	{{CommentForm.as_p}}
+	<input type="submit" name="Submit">
+</form>
+
+
+{% endblock content %}
