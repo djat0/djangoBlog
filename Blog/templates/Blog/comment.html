@@ -21,17 +21,17 @@
 <hr>
 <a href="{% url 'create-comment' post.id %}">add comment</a>
 {% for comment in comments %}
+<hr>
 
-
-{% if c.user == request.user %}
-<h4>{{ c.user }} |<a href="{% url 'edit-comment' comment.id %}">edit</a>||<a
+{% if comment.user == request.user %}
+<p><strong>{{ comment.user }}</strong> |<a href="{% url 'edit-comment' comment.id %}">edit</a>|<a
                 href="{% url 'delete-comment' comment.id %}">delete</a>|
-</h4>
+</p>
 {% else %}
-<h4>{{ comment.user }}</h4>
+<p><strong>{{ comment.user }}</strong></p>
 {% endif %}
 <p>{{ comment.comment }}</p>
-<p><a href="{% url 'reply' comment.id %}">reply</a> || {{ c.datetime_posted }}</p>
+<p><a href="{% url 'reply' comment.id %}">reply</a> || {{ comment.datetime_posted }}</p>
 <hr>
 
 {% endfor %}

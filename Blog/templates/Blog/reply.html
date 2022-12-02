@@ -13,12 +13,13 @@
 
 <hr>
 {% if reply.user == request.user %}
-<h4>{{reply.user}} |<a href="{% url 'edit-reply' reply.id %}">edit</a>||<a
-        href="{% url 'delete-reply' reply.id %}">delete</a>|</h4>
+<p><strong>{{reply.user}}</strong> |<a href="{% url 'edit-reply' reply.id %}">edit</a>|<a
+                href="{% url 'delete-reply' reply.id %}">delete</a>|</p>
 {% else %}
-<h4>{{reply.user}}</h4>
+<p><strong>{{reply.user}}</strong></p>
 {% endif %}
 <p>{{reply.reply}}</p>
+<p>{{ reply.datetime_replied }}</p>
 <hr>
 
 {% endfor %}

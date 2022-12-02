@@ -3,12 +3,12 @@
 {% block content %}
 
 
-<h1>This is the profile page</h1><a href="{% url 'edit-profile' %}">edit profile</a> | | <a
-    href="{% url 'reset-password' %}">change password</a>
+
 <h1><img src="{{ user_profile.avatar.url }}" class="avatar"></h1>
 <p>Username: {{ user_profile.user.username }}</p>
 <p>Name: {{ user_profile.get_fullname }}</p>
 <p>Email: {{ user_profile.user.email }}</p>
+<a href="{% url 'edit-profile' %}">edit profile</a> | <a href="{% url 'reset-password' %}">change password</a>
 {% for message in messages %}
 {{ message }}
 {% endfor %}
