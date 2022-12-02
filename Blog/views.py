@@ -129,6 +129,7 @@ def editReply(request, reply_id):
     user_profile = UserProfile.objects.get(user=request.user)
     reply = Reply.objects.get(id=reply_id)
     comment_id = reply.comment.id
+    comment = Comment.objects.get(id=comment_id)
     form = ReplyForm(initial={'reply': reply.reply})
     if request.method == 'POST':
         form = ReplyForm(request.POST)
@@ -138,7 +139,7 @@ def editReply(request, reply_id):
             reply.save()
             return redirect('reply', comment_id)
 
-    context = {'reply': reply, 'replyForm': form, 'user_profile': user_profile}
+    context = {'comment': comment, 'replyForm': form, 'user_profile': user_profile}
     return render(request, 'Blog/create-reply.html', context)
 
 
